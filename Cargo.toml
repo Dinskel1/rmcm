@@ -1,0 +1,30 @@
+[package]
+name = "rmcm"
+version = "0.1.0"
+edition = "2021"
+description = "Rust rewrite of MCM v0.83 (context mixing compressor). Faithful port, bit-exact target."
+license = "GPL-3.0-or-later"
+
+[lib]
+name = "rmcm"
+path = "src/lib.rs"
+
+[[bin]]
+name = "rmcm"
+path = "src/main.rs"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+
+[profile.dev]
+# The C++ original relies on two's-complement wrap-around; we use explicit
+# wrapping_* in hot paths, but keep dev checks on to catch real bugs.
+overflow-checks = true
+
+[features]
+# Bit-level tracing of the encoder, used to diff against the C++ reference.
+# Never enable for production: it records every coded bit in memory.
+trace = []
