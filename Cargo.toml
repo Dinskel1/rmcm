@@ -1,9 +1,9 @@
 [package]
 name = "rmcm"
-version = "0.1.0"
+version = "0.8.3"
 edition = "2021"
-description = "Rust rewrite of MCM v0.83 (context mixing compressor). Faithful port, bit-exact target."
-license = "GPL-3.0-or-later"
+description = "Rust rewrite of MCM v0.83."
+license = "AGPL-3.0"
 
 [lib]
 name = "rmcm"
@@ -26,5 +26,4 @@ overflow-checks = true
 
 [features]
 # Bit-level tracing of the encoder, used to diff against the C++ reference.
-# Never enable for production: it records every coded bit in memory.
 trace = []
