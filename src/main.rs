@@ -64,7 +64,7 @@ impl Default for Options {
 
 fn print_header() {
     println!("======================================================================");
-    println!("rmcm 0.83, a Rust port of mcm by Mathieu Chartier (c)2015 Google Inc.");
+    println!("rmcm 0.8.3, a Rust port of mcm by Mathieu Chartier (c)2015 Google Inc.");
     println!("Experimental, may contain bugs. Rust port by Dinskel1 (github.com/Dinskel1)");
     println!("Special thanks to: Matt Mahoney, Stephan Busch, Christopher Mattern.");
     println!("======================================================================");
